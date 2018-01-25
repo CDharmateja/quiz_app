@@ -6,6 +6,10 @@ h1 {
   text-align: center;
 }
 
+.start {
+  text-align: center;
+}
+
 .content-header {
   display: inline-block;
   text-align: right;
