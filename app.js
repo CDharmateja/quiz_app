@@ -1,3 +1,4 @@
+// single state variable
 var state = {
     items : [{ques: 'If there are three apples and you took two away, how many do you have?', options: ['one', 'two', 'three', 'none'], ans: 1},
             {ques: 'Which is heavier, 100 pounds of rocks or 100 pounds of gold?', options: ['100 pounds of gold', '100 pounds of rock', 'They weigh the same'], ans: 2},
@@ -18,10 +19,12 @@ var state = {
     wrong: 0
 };
 
+// renders the info about quiz
 var render = function() {
     $('main').html('<div class="start"><div>You\'ll be asked with the questions which are very tricky. So be ready. Click here to start</div><button class="js-start">Start</button>');
 };
 
+// renders the question
 var renderQuiz = function(i = 0) {
     $('main').text('');
     var s = '';
@@ -45,6 +48,8 @@ var renderQuiz = function(i = 0) {
     </div>')
 };
 
+
+// validates the submission
 var submission = function(quesNo) {
     $('.js-submit').on('click', function(event) {
         event.preventDefault();
@@ -70,6 +75,7 @@ var submission = function(quesNo) {
     });
 };
 
+// go to next question
 var nextQues = function(quesNo) {
     if (quesNo > 9) {
         result();
@@ -83,12 +89,14 @@ var nextQues = function(quesNo) {
     });
 };
 
+// Select only one option
 var optionSelect = function() {
     $('input[type="radio"]').on('change', function() {
         $('input[type="radio"]').not(this).prop('checked', false);
     });
 }
 
+// shows the result after the quiz
 var result = function() {
     $('.container').html('<div>You got ' + state.correct + ' correct</div>\n<button class="js-start">Try again</button>');
     state.correct = 0;
@@ -99,6 +107,7 @@ var result = function() {
     return;
 }
 
+// starts the quiz
 var startQuiz = function() {
     var quesNo = 0;
     render();
@@ -110,6 +119,7 @@ var startQuiz = function() {
     });
 }
 
+// start quiz when page loads
 $(function() {
     startQuiz();
 });
