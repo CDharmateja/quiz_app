@@ -12,7 +12,8 @@ var state = {
             {ques: 'What is light as a feather, but even the strongest man cannot hold it more than a few minutes?', options: ['A feather', 'A smile', 'His breath'], ans: 2},
             {ques: 'There was an airplane crash, every single person died, but two people survived. How is this possible?', options: ['They were not on the airplane', 'They were married', 'The 2 were saved by others'], ans: 1},
             {ques: 'How far can you walk into the woods?', options: ['Halfway', 'All the way and then back again', 'As far as you want'], ans: 0},
-            {ques: 'The Mississippi River is the dividing line between Tennessee and Arkansas. If an airplane crashed exactly in the middle of the Mississippi River there, where would the survivors be buried?', options: ['In the town of their birth', 'Nowhere, you don\'t bury survivors', 'Whatever side the people were on'], ans: 1}],
+            {ques: 'The Mississippi River is the dividing line between Tennessee and Arkansas. If an airplane crashed exactly in the middle of the Mississippi River there, where would the survivors be buried?', options: ['In the town of their birth', 'Nowhere, you don\'t bury survivors', 'Whatever side the people were on'], ans: 1},
+            {ques: 'How many months in a year have 28 days?', options: [12, 7, 1, 0], ans: 0}],   
     correct: 0,
     wrong: 0
 };
@@ -70,7 +71,7 @@ var submission = function(quesNo) {
 };
 
 var nextQues = function(quesNo) {
-    if (quesNo > 8) {
+    if (quesNo > 9) {
         result();
         return;
     }
